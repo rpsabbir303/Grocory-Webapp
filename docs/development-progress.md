@@ -30,3 +30,18 @@ Completed:
 Not started by design:
 
 - Complete website pages, feature-specific flows, Storybook, backend, database, and real API integrations.
+
+## 2026-11-11 — Main website layout and navigation
+
+Completed:
+
+- Added responsive main-site header with brand placeholder, location selector, search, customer navigation, cart, and merchant entry points.
+- Added mock auth states for guest, customer, pending merchant, approved merchant, and dual-role users.
+- Added profile dropdown navigation with role-aware merchant destinations.
+- Added public, authentication, account, merchant application, and separate merchant dashboard layout shells.
+- Added responsive footer with placeholder business/legal information.
+- Added route-level 404 handling and placeholder routes for required navigation destinations.
+
+Not started by design:
+
+- Homepage, product/store pages, complete account flows, merchant dashboard features, backend, database, and real authentication.
