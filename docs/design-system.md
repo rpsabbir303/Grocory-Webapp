@@ -1,15 +1,15 @@
 # Design System
 
-The shared design system lives in `packages/ui`. It is brand-neutral because no business documentation defines a final identity yet. Update `src/tokens.ts` and `src/styles.css` to re-theme both applications together.
+The shared design system lives in `packages/ui`. Task 28.1 defines the configurable LocalMarket light-theme identity. See [LocalMarket design system](localmarket-design-system.md) for the current brand, token values, component specifications, and preview instructions. This file retains the original component API overview.
 
 ## Tokens
 
 `designTokens` centralizes semantic colors, typography, spacing, radii, shadows, content widths, responsive breakpoints, and z-index levels. CSS variables in `styles.css` expose core semantic values to application styles.
 
-- Primary: teal (`#0f766e`) for primary actions and focus.
-- Neutral: slate values for text, borders, surfaces, and canvas.
-- Status: green, amber, red, and sky for success, warning, error, and information.
-- Typography: Inter-first system stack with regular, medium, semibold, and bold weights.
+- Primary: forest green (`#245c42`) for primary actions and focus.
+- Neutral: warm neutral values for text, borders, surfaces, and canvas.
+- Status: centralized success, warning, error, and information palettes.
+- Typography: a local system stack with regular, medium, semibold, and bold weights; no remote font loading.
 - Breakpoints: mobile 640px, tablet 768px, desktop 1024px, wide 1280px.
 
 ## Components

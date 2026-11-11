@@ -375,3 +375,62 @@ Known route gaps documented rather than fabricated:
 - Category listing routes, search route, informational/legal footer routes, and the requested Admin feature routes are not implemented in the current repository.
 
 - Route audit verification: Main Website TypeScript and production build pass after shared shell changes; / and /stores returned HTTP 200 from the refreshed dev server. Tailwind build warnings indicate the existing config is detected but should be reviewed separately.
+
+## 2026-11-12 — Footer and informational pages
+
+Completed:
+
+- Added `/about`, `/how-it-works`, `/categories`, `/contact`, `/privacy-policy`, and `/terms-and-conditions`.
+- Kept existing `/stores` and `/become-merchant` routes as canonical destinations.
+- Updated footer links to canonical informational and contact routes without changing the established footer layout.
+- Added centralized site/contact/legal-review configuration in `app/lib/site-config.ts`.
+- Added mock contact submission service with validation, loading, success, and error states.
+- Added informational-page documentation and clearly marked unresolved business/legal placeholders.
+
+Remaining documented gaps:
+
+- `/categories/[slug]` and `/search` remain outside this task because their full listing/search experiences are separate product features.
+
+Verification:
+
+- Main and Admin TypeScript checks passed.
+- Main and Admin production builds passed.
+- New informational routes and `/stores` returned HTTP 200 from a clean Main Website dev server on port 3002 after the prior port-3000 server was left untouched.
+
+## 2026-11-12 — Task 28.1: LocalMarket brand and design-system foundation
+
+Implemented:
+
+- Established the configurable LocalMarket light-theme identity: forest-green primary, blue-gray secondary, restrained clay accent, warm neutrals, and semantic status palettes.
+- Added `BrandLogo`, `BrandSymbol`, and `brandConfig` with full, compact, symbol, inverse, and monochrome presentations. Added a small reusable SVG `Icon` vocabulary without an icon dependency.
+- Expanded the existing token source with semantic colors, nine responsive typography roles, spacing, layout metrics, component specifications, image ratios, icon metrics, and motion durations.
+- Connected the shared token values to the existing Tailwind integration and CSS variables for both applications. Existing utility names remain compatibility aliases; no second token system was introduced.
+- Refined shared component presentation for native controls, search, buttons, loading, switches, cards, status badges, tables, navigation, dialogs, and feedback. Existing component APIs and callbacks are retained.
+- Added a static visual-reference generator and SVG export command: `node scripts/preview-design-system.cjs`. Outputs are in `%TEMP%\localmarket-design-system`; this adds no application route.
+- Created `docs/localmarket-design-system.md`; updated the earlier component overview and linked the Task 28 inventory to the current foundation specification.
+- Preserved all working-tree changes from earlier tasks. This task adds no individual-page redesign, routes, business data, services, authentication, or state management.
+
+Verified:
+
+- TypeScript checks pass for main-web, admin-web, UI, api-client, validation, and shared-types, using their existing tsconfig files.
+- A start-of-Task-28.1 snapshot comparison found no changes in 115 protected application/configuration, service, model, validation, and package-declaration files.
+- HTTP audit covered all 46 existing Main Website route templates with representative dynamic values, plus Admin `/`; all resolve successfully (compatibility redirects followed). Unknown routes and the existing missing category-slug route return 404. These checks establish route availability, not feature completion.
+- The browser layout audit covered 138 Main Website route/viewport combinations at 360, 768, and 1440px. No document-level horizontal overflow remained. The shared file-input sizing also resolves the previously observed merchant-settings overflow.
+- The standalone identity/component reference renders at 360, 768, and 1440px without horizontal overflow. Inspected desktop/mobile reference images and the confirmation-dialog presentation. Confirmed default/compact/inverse logo colors and sizing after CSS generation.
+- Eleven text/background pairs were checked against 4.5:1 contrast. All pass: primary white text 7.82:1, hover 10.20:1, secondary 7.87:1, accent 5.70:1, body 17.49:1, secondary text 7.79:1, muted text on canvas 5.22:1, and status badges at least 8.83:1. This is pair-level verification, not a full accessibility certification.
+- Ten browser interaction checks pass: store radius/search/reset; account dropdown/mobile navigation; product quantity/cart replacement; cart quantity/clear cancellation; checkout validation/confirmation dialog; profile validation/save; address save/delete cancellation; inventory adjustment; settings tabs/switch/save; and support FAQ/form submission.
+- No root or workspace lint script or ESLint configuration is present. A separate lint pass was therefore not run and no lint dependencies were added.
+
+Known existing limitations retained under the visual-only scope:
+
+- The checkout end-to-end success-navigation check fails: mock order persistence succeeds (two orders including the test fixture), and the cart clears (zero lines), but the existing empty-cart effect redirects to `/cart` instead of retaining `/order-success`. Direct checkout refresh can also redirect before cart hydration. Checkout source and cart state were unchanged in Task 28.1.
+- Direct loads with stored merchant state produce existing hydration mismatches on `/become-merchant/status`, `/merchant/dashboard`, and `/merchant/store-sharing`. Their synchronous storage reads/origin-dependent rendering were not changed.
+- External sample-image requests are blocked in this test environment (`ERR_NETWORK_ACCESS_DENIED`). The neutral fallback presentation was verified; external-image delivery is not certified.
+- Some previously implemented actions remain placeholders; category-slug/search pages and most admin features remain unimplemented. The new identity is ready for a subsequent page rollout, not evidence that all planned features exist.
+
+Final production verification:
+
+- Main Website production build passes (exit 0), using `.\node_modules\.bin\next.cmd build` from `apps/main-web`.
+- Admin Website production build passes (exit 0), using the equivalent command from `apps/admin-web`.
+- Both builds completed compilation, built-in type validation, static generation, and trace collection. No dependency versions or lockfiles were changed.
+- Task 28.1 foundation implementation is complete. The separate pre-existing checkout navigation and merchant hydration findings remain open; full-platform functional completion is not claimed.

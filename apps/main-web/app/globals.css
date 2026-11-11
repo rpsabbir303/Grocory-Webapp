@@ -1,5 +1,3 @@
 @import '../../../packages/ui/src/styles.css';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import './redesign.css';
 body { margin: 0; background: var(--color-canvas); color: var(--color-ink); font-family: var(--font-family); }

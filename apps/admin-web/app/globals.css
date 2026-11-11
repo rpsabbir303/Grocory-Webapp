@@ -1,5 +1,6 @@
 @import '../../../packages/ui/src/styles.css';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+  .admin-welcome > p { display: inline-flex; border: 1px solid var(--color-border); border-radius: 9999px; padding: .5rem 1rem; background: white; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+  .admin-welcome h1 { font-size: clamp(2rem, 5vw, 3rem); }
+  .admin-welcome .ui-card { padding: clamp(1.5rem, 5vw, 3rem); border-top: 3px solid var(--color-primary); box-shadow: none; }
+  .admin-welcome .ui-card p { max-width: 55ch; line-height: 1.8; }
 body { margin: 0; background: var(--color-canvas); color: var(--color-ink); font-family: var(--font-family); }

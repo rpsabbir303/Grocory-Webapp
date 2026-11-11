@@ -18,8 +18,7 @@ Implemented routes:
 
 Route gaps identified:
 
-- `/categories`, `/categories/[slug]`, `/search`, and informational/legal footer routes are referenced by existing UI but do not have page implementations.
-- These remain documented gaps rather than fabricated business pages. Existing not-found behavior provides a safe fallback.
+- `/categories/[slug]` and `/search` are still not implemented and remain documented gaps. The footer-linked informational routes are now implemented.
 
 ## Shared layouts and navigation
 
