@@ -16,3 +16,17 @@ Not started by design:
 - Feature pages, routing, authentication, real APIs, backend, database, and production data.
 
 Next step: implement page groups from the approved product requirements, starting with the main website shell and role-aware navigation.
+
+## 2026-11-11 — Design system foundation
+
+Completed:
+
+- Added centralized design tokens and shared CSS variables.
+- Expanded `packages/ui` with reusable controls, feedback states, data display primitives, dialogs, navigation primitives, and layout foundations.
+- Added consistent form field composition and accessible state attributes.
+- Applied shared semantic tokens to both application global styles.
+- Added `docs/design-system.md`.
+
+Not started by design:
+
+- Complete website pages, feature-specific flows, Storybook, backend, database, and real API integrations.
