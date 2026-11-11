@@ -71,3 +71,17 @@ Completed:
 Not started by design:
 
 - Maps, GPS, real location services, store detail pages, backend, database, and real API integrations.
+
+## 2026-11-11 — Storefront page
+
+Completed:
+
+- Added `/store/[slug]` storefront route with store profile, optional verified badge, optional hours/delivery information, availability state, and mock Call/Chat feedback.
+- Added store-scoped product search, category filtering, price sorting, product counts, loading skeletons, empty states, and stock messaging.
+- Added centralized mock product data across existing stores.
+- Added one-store-per-cart mock context at the main app root, header cart count, and cart replacement confirmation.
+- Added legacy `/stores/[id]` redirect compatibility for existing store-card links.
+
+Not started by design:
+
+- Checkout, payments, order placement, real calling/chat, GPS/maps, backend, database, and real authentication.
