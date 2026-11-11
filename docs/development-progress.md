@@ -299,3 +299,17 @@ Completed:
 Not started by design:
 
 - Real payment gateways, recurring billing, tax calculation, bank verification, backend APIs, and database integration.
+
+## 2026-11-12 — Merchant reports and analytics
+
+Completed:
+
+- Added `/merchant/reports` with date-range filters for today, 7, 30, and 90 days.
+- Added calculated order, sales, average order value, completion, pending, product, and inventory metrics scoped to the merchant store.
+- Added sales visualization, order-status distribution, product performance sorting, and empty states without fabricating sales data.
+- Added CSV export for the selected order data with a range-based filename and feedback states.
+- Added a centralized `getMerchantReportData` mock service boundary for future analytics APIs.
+
+Not started by design:
+
+- Forecasting, AI insights, external analytics, accounting reports, PDF export, backend APIs, and database integration.
