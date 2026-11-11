@@ -168,6 +168,20 @@ Not started by design:
 
 - Product, inventory, order, subscription, billing, reporting, support functionality, real notifications, backend authorization, and database integration.
 
+## 2026-11-12 — Merchant order management
+
+Completed:
+
+- Added `/merchant/orders` with merchant-store-scoped order listing, search, status filters, sorting, loading, and empty states.
+- Added `/merchant/orders/[id]` with customer information, products, price summary, mock Call Customer action, and status actions.
+- Added centralized valid transitions: Pending → Accepted → Packing → Out for Delivery → Delivered.
+- Persisted status changes through the existing mock order service so customer order history/details read the latest status.
+- Preserved stock behavior: order status changes do not deduct inventory.
+
+Not started by design:
+
+- Cancellation workflow, rider management, real-time tracking, real notifications, phone/chat integrations, backend APIs, and database integration.
+
 ## 2026-11-12 — Merchant store management
 
 Completed:
