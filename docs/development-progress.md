@@ -168,6 +168,21 @@ Not started by design:
 
 - Product, inventory, order, subscription, billing, reporting, support functionality, real notifications, backend authorization, and database integration.
 
+## 2026-11-12 — Merchant store management
+
+Completed:
+
+- Added `/merchant/store` for viewing and editing the merchant-owned store profile.
+- Added editable store name, category, description, contact numbers, address, area, and landmark.
+- Added temporary logo and cover image previews with type/size validation and remove actions.
+- Added merchant-controlled open/closed availability with confirmation dialog and feedback.
+- Added public storefront navigation using the updated store slug.
+- Added persisted mock store overrides so public storefront data reflects merchant edits in the current browser.
+
+Not started by design:
+
+- Real image uploads, GPS/maps, product/inventory/order management, subscription payments, backend APIs, and database integration.
+
 ## 2026-11-12 — Authentication pages and user access flow
 
 Completed:

@@ -7,6 +7,7 @@ export const mockStores: Store[] = [
   { id: 'store-3', name: 'Bhorer Bakery', ownerId: 'merchant-3', address: 'Lalmatia, Dhaka', category: 'Bakery', description: 'Fresh breads and baked goods from a nearby independent bakery.', distanceKm: 0.9, imageUrl: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80', isOpen: false, verified: true },
   { id: 'store-4', name: 'Lekha Pora Stationery', ownerId: 'merchant-4', address: 'Kalabagan, Dhaka', category: 'Stationery', description: 'School, office, and creative supplies from a local shop.', distanceKm: 1, imageUrl: 'https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?auto=format&fit=crop&w=800&q=80', isOpen: true }
 ];
+if (typeof window !== 'undefined') { try { const overrides = JSON.parse(window.localStorage.getItem('localmarket-store-overrides') ?? '[]') as Store[]; overrides.forEach((override) => { const current = mockStores.find((store) => store.id === override.id); if (current) Object.assign(current, override); }); } catch { /* Ignore malformed mock store state. */ } }
 export const mockProducts: Product[] = [
   { id: 'product-1', storeId: 'store-1', name: 'Miniket Rice', description: 'Everyday local rice', category: 'Pantry', price: 86, unit: 'per kg', imageUrl: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80', inventory: 24 },
   { id: 'product-2', storeId: 'store-1', name: 'Mustard Oil', description: 'Kitchen staple for everyday cooking', category: 'Pantry', conditionNote: 'Sealed pack', price: 195, unit: 'per litre', imageUrl: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80', inventory: 9 },
@@ -24,4 +25,5 @@ export const mockService = {
   async getOrder(id: string): Promise<Order | undefined> { return readOrders().find((order) => order.id === id); },
   async listOrders(customerId: string): Promise<Order[]> { return readOrders().filter((order) => order.customerId === customerId); }
   ,async createMerchantApplication(input: MerchantApplication): Promise<MerchantApplication> { await new Promise((resolve) => setTimeout(resolve, 400)); return input; }
+  ,async updateMerchantStore(store: Store): Promise<Store> { await new Promise((resolve) => setTimeout(resolve, 350)); const current = mockStores.find((item) => item.id === store.id); if (current) Object.assign(current, store); if (typeof window !== 'undefined') { const saved = mockStores.filter((item) => item.id === store.id); window.localStorage.setItem('localmarket-store-overrides', JSON.stringify(saved)); } return store; }
 };
