@@ -183,6 +183,21 @@ Not started by design:
 
 - Real image uploads, GPS/maps, product/inventory/order management, subscription payments, backend APIs, and database integration.
 
+## 2026-11-12 — Merchant product management
+
+Completed:
+
+- Added `/merchant/products`, `/merchant/products/new`, and `/merchant/products/[id]/edit`.
+- Added merchant-scoped product listing with search, category/status filters, and price/newest sorting.
+- Added product create/edit form with validation, pricing, units, stock, active visibility, and mock image preview.
+- Added activate/deactivate and delete-with-confirmation actions.
+- Added product persistence through the shared mock service and localStorage overrides.
+- Customer-facing product consumers read the same centralized mock product collection, preserving storefront consistency.
+
+Not started by design:
+
+- Full inventory management, bulk stock adjustments, stock history, real image uploads, backend APIs, and database integration.
+
 ## 2026-11-12 — Authentication pages and user access flow
 
 Completed:

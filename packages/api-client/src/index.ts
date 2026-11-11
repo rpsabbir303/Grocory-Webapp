@@ -16,6 +16,7 @@ export const mockProducts: Product[] = [
   { id: 'product-5', storeId: 'store-3', name: 'Butter Bun', description: 'Freshly baked today', category: 'Breads', price: 45, unit: 'pack of 2', imageUrl: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80', inventory: 0 },
   { id: 'product-6', storeId: 'store-4', name: 'A4 Exercise Book', description: 'Ruled pages for school or work', category: 'School supplies', price: 75, unit: '1 book', imageUrl: 'https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=600&q=80', inventory: 18 }
 ];
+if (typeof window !== 'undefined') { try { const overrides = JSON.parse(window.localStorage.getItem('localmarket-product-overrides') ?? '[]') as Product[]; overrides.forEach((override) => { const current = mockProducts.find((product) => product.id === override.id); if (current) Object.assign(current, override); else mockProducts.push(override); }); } catch { /* Ignore malformed mock product state. */ } }
 const orderStorageKey = 'localmarket-orders';
 const readOrders = (): Order[] => { if (typeof window === 'undefined') return []; try { return JSON.parse(window.localStorage.getItem(orderStorageKey) ?? '[]') as Order[]; } catch { return []; } };
 export const mockService = {
@@ -26,4 +27,6 @@ export const mockService = {
   async listOrders(customerId: string): Promise<Order[]> { return readOrders().filter((order) => order.customerId === customerId); }
   ,async createMerchantApplication(input: MerchantApplication): Promise<MerchantApplication> { await new Promise((resolve) => setTimeout(resolve, 400)); return input; }
   ,async updateMerchantStore(store: Store): Promise<Store> { await new Promise((resolve) => setTimeout(resolve, 350)); const current = mockStores.find((item) => item.id === store.id); if (current) Object.assign(current, store); if (typeof window !== 'undefined') { const saved = mockStores.filter((item) => item.id === store.id); window.localStorage.setItem('localmarket-store-overrides', JSON.stringify(saved)); } return store; }
+  ,async saveMerchantProduct(product: Product): Promise<Product> { await new Promise((resolve) => setTimeout(resolve, 300)); const current = mockProducts.find((item) => item.id === product.id); if (current) Object.assign(current, product); else mockProducts.push(product); if (typeof window !== 'undefined') window.localStorage.setItem('localmarket-product-overrides', JSON.stringify(mockProducts)); return product; }
+  ,async deleteMerchantProduct(productId: string): Promise<void> { await new Promise((resolve) => setTimeout(resolve, 250)); const index = mockProducts.findIndex((item) => item.id === productId); if (index >= 0) mockProducts.splice(index, 1); if (typeof window !== 'undefined') window.localStorage.setItem('localmarket-product-overrides', JSON.stringify(mockProducts)); }
 };
