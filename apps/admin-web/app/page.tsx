@@ -1,0 +1,2 @@
+import { Card } from '@hyperlocal/ui';
+export default function Home() { return <main className="mx-auto min-h-screen max-w-5xl p-8"><p className="text-sm font-semibold text-violet-700">Frontend initialized</p><h1 className="mt-3 text-4xl font-bold tracking-tight">Super Admin</h1><Card className="mt-8"><h2 className="text-xl font-semibold">Admin Website</h2><p className="mt-2 text-slate-600">This is a separate application boundary for platform administration. Feature pages will be added in the next phase.</p></Card></main>; }

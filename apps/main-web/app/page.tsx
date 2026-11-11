@@ -1,0 +1,2 @@
+import { Card } from '@hyperlocal/ui';
+export default function Home() { return <main className="mx-auto min-h-screen max-w-5xl p-8"><p className="text-sm font-semibold text-emerald-700">Frontend initialized</p><h1 className="mt-3 text-4xl font-bold tracking-tight">Hyper-local Commerce</h1><Card className="mt-8"><h2 className="text-xl font-semibold">Main Website</h2><p className="mt-2 text-slate-600">Customer and merchant experiences share this application. Feature pages will be added in the next phase.</p></Card></main>; }
