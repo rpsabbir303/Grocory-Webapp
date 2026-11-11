@@ -313,3 +313,18 @@ Completed:
 Not started by design:
 
 - Forecasting, AI insights, external analytics, accounting reports, PDF export, backend APIs, and database integration.
+
+## 2026-11-12 — Merchant settings and account preferences
+
+Completed:
+
+- Added `/merchant/settings` with account information, security, store preferences, notification preferences, and account management sections.
+- Added mock profile editing with Bangladesh mobile validation and image preview handling.
+- Added mock password-change processing without storing or exposing passwords.
+- Added persisted merchant notification preferences through the centralized mock service.
+- Reused the existing merchant store state and linked to full Store Management rather than duplicating store editing logic.
+- Added simulated logout and account deactivation confirmation behavior.
+
+Not started by design:
+
+- Real password changes, 2FA, notification delivery, account deletion/deactivation enforcement, backend APIs, and database integration.

@@ -14,3 +14,5 @@ export interface Subscription { id: string; merchantId: string; plan: string; st
 export interface SubscriptionHistory { id: string; subscriptionId: string; plan: string; period: string; amount: number; reference?: string; status: SubscriptionStatus; date: string; }
 export type BillingStatus = 'paid' | 'pending' | 'due' | 'failed';
 export interface BillingTransaction { id: string; invoiceNumber?: string; merchantId: string; storeId?: string; subscriptionId: string; plan: string; billingPeriod: string; amount: number; paymentMethod?: 'bKash' | 'Nagad' | 'cash' | 'mock'; status: BillingStatus; paymentDate?: string; createdAt: string; }
+export interface MerchantNotificationPreferences { newOrders: boolean; orderStatusUpdates: boolean; lowStockAlerts: boolean; subscriptionReminders: boolean; accountUpdates: boolean; }
+export interface MerchantSettings { merchantId: string; fullName: string; mobile: string; email?: string; avatarUrl?: string; notifications: MerchantNotificationPreferences; }
