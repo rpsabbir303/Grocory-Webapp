@@ -1,4 +1,6 @@
-import type { Product, Store } from '@hyperlocal/shared-types';
+import type { CustomerAddress, Order, Product, Store } from '@hyperlocal/shared-types';
+export const mockCustomer = { id: 'customer-1', name: 'Alex Morgan', mobile: '01712345678' };
+export const mockAddresses: CustomerAddress[] = [{ id: 'address-1', label: 'Home', fullName: 'Alex Morgan', mobile: '01712345678', address: 'House 12, Road 7, Dhanmondi', area: 'Dhanmondi, Dhaka', instructions: 'Please call on arrival.' }];
 export const mockStores: Store[] = [
   { id: 'store-1', name: 'Shobuj Bazar', ownerId: 'merchant-1', address: 'Dhanmondi, Dhaka', category: 'Grocery & essentials', description: 'A neighborhood shop for everyday pantry and household needs.', distanceKm: 0.4, imageUrl: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80', isOpen: true, verified: true, openingHours: '8:00 AM – 10:00 PM' },
   { id: 'store-2', name: 'Nodi Fresh Corner', ownerId: 'merchant-2', address: 'Mohammadpur, Dhaka', category: 'Fruits & vegetables', description: 'Seasonal produce selected for the local neighborhood.', distanceKm: 0.7, imageUrl: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=800&q=80', isOpen: true, openingHours: '7:00 AM – 9:00 PM' },
@@ -15,5 +17,6 @@ export const mockProducts: Product[] = [
 ];
 export const mockService = {
   async listNearbyStores(): Promise<Store[]> { return mockStores; },
-  async listProducts(storeId: string): Promise<Product[]> { return mockProducts.filter((product) => product.storeId === storeId); }
+  async listProducts(storeId: string): Promise<Product[]> { return mockProducts.filter((product) => product.storeId === storeId); },
+  async createMockOrder(input: Omit<Order, 'id' | 'status'>): Promise<Order> { await new Promise((resolve) => setTimeout(resolve, 500)); return { ...input, id: `MOCK-${Date.now().toString().slice(-8)}`, status: 'pending' }; }
 };

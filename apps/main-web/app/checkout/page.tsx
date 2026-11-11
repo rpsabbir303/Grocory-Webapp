@@ -1,2 +1,2 @@
-import Link from 'next/link';
-export default function CheckoutPlaceholder() { return <main className="mx-auto max-w-3xl px-4 py-16 text-center"><h1 className="text-3xl font-bold">Checkout</h1><p className="mt-3 text-slate-500">Checkout will be implemented in a later task.</p><Link className="mt-6 inline-flex rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white" href="/cart">Return to cart</Link></main>; }
+import { CheckoutPage } from '../components/checkout-page';
+export default function CheckoutRoute() { return <CheckoutPage />; }

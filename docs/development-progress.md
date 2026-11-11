@@ -111,3 +111,15 @@ Completed:
 Not started by design:
 
 - Checkout form, address selection, payments, order placement, backend, database, and real API integrations.
+
+## 2026-11-11 — Checkout page
+
+Completed:
+
+- Replaced the checkout placeholder with `/checkout` containing saved/new address entry, Bangladesh mobile validation, contact details, COD payment selection, and responsive order summary.
+- Added mock order creation through `packages/api-client`, final confirmation, duplicate-submission protection, stock/cart validation, and cart clearing only after successful mock order creation.
+- Added `/order-success` with generated mock order ID.
+
+Not started by design:
+
+- Online payments, address APIs, GPS/maps, real order submission, backend, database, and authentication.

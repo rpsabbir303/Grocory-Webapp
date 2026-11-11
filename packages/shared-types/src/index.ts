@@ -6,5 +6,6 @@ export interface Store { id: string; name: string; ownerId: string; address: str
 export interface Product { id: string; storeId: string; name: string; description: string; category?: string; conditionNote?: string; price: number; unit: string; imageUrl?: string; imageUrls?: string[]; inventory: number; }
 export interface OrderItem { productId: string; quantity: number; unitPrice: number; }
 export interface Order { id: string; customerId: string; storeId: string; items: OrderItem[]; status: OrderStatus; total: number; }
+export interface CustomerAddress { id: string; label: string; fullName: string; mobile: string; address: string; area: string; instructions?: string; }
 export interface MerchantApplication { id: string; applicantId: string; businessName: string; status: ApplicationStatus; }
 export interface Subscription { id: string; merchantId: string; plan: string; status: 'active' | 'past_due' | 'cancelled'; }
