@@ -126,6 +126,20 @@ Not started by design:
 
 - Real-time tracking, live maps, notifications, cancellation rules, backend, database, and real payment processing.
 
+## 2026-11-11 — Customer account and profile pages
+
+Completed:
+
+- Added shared responsive account shell with desktop sidebar and mobile section navigation.
+- Added profile view/edit interaction with Bangladesh mobile validation and feedback.
+- Added saved address management with add, edit, delete confirmation, default-address display, and validation.
+- Added wishlist page with persisted mock wishlist state, stock-aware Add to Cart, product/store links, removal, and cart replacement confirmation.
+- Reused the existing order history, mock order service, shared cart state, UI primitives, and account layout.
+
+Not started by design:
+
+- Real authentication, server-side profile persistence, address APIs, SMS/email verification, backend, database, and merchant dashboard changes.
+
 ## 2026-11-11 — Checkout page
 
 Completed:
