@@ -12,3 +12,5 @@ export interface MerchantApplication { id: string; applicantId: string; business
 export type SubscriptionStatus = 'trial_active' | 'active' | 'expired' | 'payment_due' | 'suspended';
 export interface Subscription { id: string; merchantId: string; plan: string; status: SubscriptionStatus; monthlyAmount: number; trialStartDate?: string; trialEndDate?: string; nextRenewalDate?: string; activatedAt?: string; }
 export interface SubscriptionHistory { id: string; subscriptionId: string; plan: string; period: string; amount: number; reference?: string; status: SubscriptionStatus; date: string; }
+export type BillingStatus = 'paid' | 'pending' | 'due' | 'failed';
+export interface BillingTransaction { id: string; invoiceNumber?: string; merchantId: string; storeId?: string; subscriptionId: string; plan: string; billingPeriod: string; amount: number; paymentMethod?: 'bKash' | 'Nagad' | 'cash' | 'mock'; status: BillingStatus; paymentDate?: string; createdAt: string; }

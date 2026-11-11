@@ -285,3 +285,17 @@ Completed:
 Not started by design:
 
 - Online payments, address APIs, GPS/maps, real order submission, backend, database, and authentication.
+
+## 2026-11-12 — Merchant billing and payment history
+
+Completed:
+
+- Added `/merchant/billing` with subscription overview, paid/outstanding summaries, transaction count, and derived billing status.
+- Added searchable, status-filterable, newest/oldest-sortable transaction history scoped to the authenticated mock merchant.
+- Added transaction details modal with safe payment information and appropriate pending/due/failed messaging.
+- Added eligible paid-record invoice preview using a print-friendly browser document; the filename is based on the invoice number when saved by the browser.
+- Connected billing records to the existing subscription history/localStorage mock service without adding a second billing state system.
+
+Not started by design:
+
+- Real payment gateways, recurring billing, tax calculation, bank verification, backend APIs, and database integration.
