@@ -182,6 +182,20 @@ Not started by design:
 
 - Cancellation workflow, rider management, real-time tracking, real notifications, phone/chat integrations, backend APIs, and database integration.
 
+## 2026-11-12 — Merchant store sharing and QR
+
+Completed:
+
+- Added `/merchant/store-sharing` with the merchant's current public storefront URL and status preview.
+- Added Copy Link, Open Store, native Share Link fallback, and QR PNG download actions.
+- Added real QR generation using the lightweight `qrcode` package.
+- Added printable A4-style poster preview with browser print / Save as PDF flow.
+- Reused persisted store overrides and current store slug so sharing reflects Store Management changes.
+
+Not started by design:
+
+- QR analytics, campaign management, paid advertising, social integrations, backend APIs, and database integration.
+
 ## 2026-11-12 — Merchant store management
 
 Completed:
