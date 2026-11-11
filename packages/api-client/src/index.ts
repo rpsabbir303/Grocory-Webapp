@@ -1,4 +1,4 @@
-import type { CustomerAddress, Order, Product, Store } from '@hyperlocal/shared-types';
+import type { CustomerAddress, MerchantApplication, Order, Product, Store } from '@hyperlocal/shared-types';
 export const mockCustomer = { id: 'customer-1', name: 'Alex Morgan', mobile: '01712345678' };
 export const mockAddresses: CustomerAddress[] = [{ id: 'address-1', label: 'Home', fullName: 'Alex Morgan', mobile: '01712345678', address: 'House 12, Road 7, Dhanmondi', area: 'Dhanmondi, Dhaka', instructions: 'Please call on arrival.' }];
 export const mockStores: Store[] = [
@@ -23,4 +23,5 @@ export const mockService = {
   async createMockOrder(input: Omit<Order, 'id' | 'status'>): Promise<Order> { await new Promise((resolve) => setTimeout(resolve, 500)); const order: Order = { ...input, id: `MOCK-${Date.now().toString().slice(-8)}`, status: 'pending', createdAt: new Date().toISOString(), paymentMethod: 'cod', customerName: input.customerName ?? mockCustomer.name, mobile: input.mobile ?? mockCustomer.mobile, deliveryAddress: input.deliveryAddress ?? mockAddresses[0]?.address, area: input.area ?? mockAddresses[0]?.area, deliveryInstructions: input.deliveryInstructions ?? mockAddresses[0]?.instructions }; if (typeof window !== 'undefined') window.localStorage.setItem(orderStorageKey, JSON.stringify([order, ...readOrders()])); return order; },
   async getOrder(id: string): Promise<Order | undefined> { return readOrders().find((order) => order.id === id); },
   async listOrders(customerId: string): Promise<Order[]> { return readOrders().filter((order) => order.customerId === customerId); }
+  ,async createMerchantApplication(input: MerchantApplication): Promise<MerchantApplication> { await new Promise((resolve) => setTimeout(resolve, 400)); return input; }
 };

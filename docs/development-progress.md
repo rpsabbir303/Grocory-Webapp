@@ -140,6 +140,21 @@ Not started by design:
 
 - Real authentication, server-side profile persistence, address APIs, SMS/email verification, backend, database, and merchant dashboard changes.
 
+## 2026-11-12 — Merchant registration and application flow
+
+Completed:
+
+- Added `/become-merchant`, `/become-merchant/application`, `/become-merchant/location`, `/become-merchant/verification`, and `/become-merchant/status`.
+- Added merchant opportunity landing content with bounded subscription/trial/no-commission information.
+- Added multi-step shop, location, mock map-pin, and document verification flow.
+- Added client-only temporary document selection with type/size validation; sensitive files are not persisted.
+- Added mock application submission, generated application ID, under-review status, and status messaging.
+- Added centralized merchant application types and mock service boundary.
+
+Not started by design:
+
+- Admin approval, real file upload, NID verification, GPS/maps, subscription payments, notifications, backend, database, and merchant dashboard features.
+
 ## 2026-11-12 — Authentication pages and user access flow
 
 Completed:
