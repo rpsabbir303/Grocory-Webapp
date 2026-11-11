@@ -198,6 +198,21 @@ Not started by design:
 
 - Full inventory management, bulk stock adjustments, stock history, real image uploads, backend APIs, and database integration.
 
+## 2026-11-12 — Merchant inventory management
+
+Completed:
+
+- Added `/merchant/inventory` with derived Total, In Stock, Low Stock, and Out of Stock summaries.
+- Added product search and stock-status filtering scoped to the merchant store.
+- Added Stock In and Stock Out interactions with quantity validation, previews, notes, and feedback.
+- Added persisted mock inventory movement history with previous/updated stock values and movement filtering.
+- Added configurable low-stock threshold with a documented mock default of 5 units.
+- Reused the centralized product collection and mock service stock mutation methods so Product Management and customer pages receive updated quantities.
+
+Not started by design:
+
+- Barcode scanning, warehouses, supplier management, purchase orders, real notifications, backend APIs, and database integration.
+
 ## 2026-11-12 — Authentication pages and user access flow
 
 Completed:
