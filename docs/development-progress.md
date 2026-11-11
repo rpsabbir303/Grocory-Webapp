@@ -196,6 +196,24 @@ Not started by design:
 
 - QR analytics, campaign management, paid advertising, social integrations, backend APIs, and database integration.
 
+## 2026-11-12 — Merchant subscription management
+
+Completed:
+
+- Added `/merchant/subscription` with subscription overview, status handling, plan details, and trial progress calculation.
+- Added configurable mock pricing with BDT 99/month default within the BDT 50–100 range.
+- Added derived trial remaining days and progress from mock dates rather than hardcoded countdowns.
+- Added mock renewal confirmation, processing state, persisted renewal state, and subscription history.
+- Added empty, loading, expired/payment-due, and suspended messaging.
+
+Assumption documented:
+
+- The frontend does not enforce a final overdue-subscription access policy; the brief only indicates that stores may be hidden. Backend policy remains unresolved.
+
+Not started by design:
+
+- Payment gateways, recurring billing, invoices, notifications, backend APIs, and database integration.
+
 ## 2026-11-12 — Merchant store management
 
 Completed:
