@@ -112,6 +112,20 @@ Not started by design:
 
 - Checkout form, address selection, payments, order placement, backend, database, and real API integrations.
 
+## 2026-11-11 — Order success and order details
+
+Completed:
+
+- Persisted checkout-created mock orders through the existing `mockService` boundary.
+- Replaced `/order-success` with order-backed confirmation details and Track Order / Continue Shopping actions.
+- Added `/orders/[id]` with order overview, delivery information, ordered items, price summary, copy-ID interaction, and status timeline.
+- Added `/account/orders` order history using the same mock order service.
+- Added proper not-found states and responsive layouts.
+
+Not started by design:
+
+- Real-time tracking, live maps, notifications, cancellation rules, backend, database, and real payment processing.
+
 ## 2026-11-11 — Checkout page
 
 Completed:

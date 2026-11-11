@@ -15,8 +15,12 @@ export const mockProducts: Product[] = [
   { id: 'product-5', storeId: 'store-3', name: 'Butter Bun', description: 'Freshly baked today', category: 'Breads', price: 45, unit: 'pack of 2', imageUrl: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80', inventory: 0 },
   { id: 'product-6', storeId: 'store-4', name: 'A4 Exercise Book', description: 'Ruled pages for school or work', category: 'School supplies', price: 75, unit: '1 book', imageUrl: 'https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=600&q=80', inventory: 18 }
 ];
+const orderStorageKey = 'localmarket-orders';
+const readOrders = (): Order[] => { if (typeof window === 'undefined') return []; try { return JSON.parse(window.localStorage.getItem(orderStorageKey) ?? '[]') as Order[]; } catch { return []; } };
 export const mockService = {
   async listNearbyStores(): Promise<Store[]> { return mockStores; },
   async listProducts(storeId: string): Promise<Product[]> { return mockProducts.filter((product) => product.storeId === storeId); },
-  async createMockOrder(input: Omit<Order, 'id' | 'status'>): Promise<Order> { await new Promise((resolve) => setTimeout(resolve, 500)); return { ...input, id: `MOCK-${Date.now().toString().slice(-8)}`, status: 'pending' }; }
+  async createMockOrder(input: Omit<Order, 'id' | 'status'>): Promise<Order> { await new Promise((resolve) => setTimeout(resolve, 500)); const order: Order = { ...input, id: `MOCK-${Date.now().toString().slice(-8)}`, status: 'pending', createdAt: new Date().toISOString(), paymentMethod: 'cod', customerName: input.customerName ?? mockCustomer.name, mobile: input.mobile ?? mockCustomer.mobile, deliveryAddress: input.deliveryAddress ?? mockAddresses[0]?.address, area: input.area ?? mockAddresses[0]?.area, deliveryInstructions: input.deliveryInstructions ?? mockAddresses[0]?.instructions }; if (typeof window !== 'undefined') window.localStorage.setItem(orderStorageKey, JSON.stringify([order, ...readOrders()])); return order; },
+  async getOrder(id: string): Promise<Order | undefined> { return readOrders().find((order) => order.id === id); },
+  async listOrders(customerId: string): Promise<Order[]> { return readOrders().filter((order) => order.customerId === customerId); }
 };
