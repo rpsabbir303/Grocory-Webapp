@@ -140,6 +140,21 @@ Not started by design:
 
 - Real authentication, server-side profile persistence, address APIs, SMS/email verification, backend, database, and merchant dashboard changes.
 
+## 2026-11-12 — Authentication pages and user access flow
+
+Completed:
+
+- Added canonical `/login`, `/register`, `/forgot-password`, and `/verify-otp` routes.
+- Added a single mock auth context with safe session state only; passwords are not persisted.
+- Added mobile/password validation, registration validation, terms acceptance, mock OTP verification (`123456`), and mock resend feedback.
+- Added redirect-aware login handling with `next` destination support.
+- Added guest protection for customer account routes and retained `/auth/login` as a compatibility redirect.
+- Reused the existing design-system Card, Input, and Button primitives.
+
+Not started by design:
+
+- Real authentication, password reset APIs, SMS, email verification, social login, backend authorization, and production security controls.
+
 ## 2026-11-11 — Checkout page
 
 Completed:
