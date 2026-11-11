@@ -45,3 +45,17 @@ Completed:
 Not started by design:
 
 - Homepage, product/store pages, complete account flows, merchant dashboard features, backend, database, and real authentication.
+
+## 2026-11-11 — Customer homepage
+
+Completed:
+
+- Added a conversion-focused local-commerce homepage with location-aware mock messaging and product/store search.
+- Added fictional Bangladesh-market mock stores and products in `packages/api-client`.
+- Added nearby stores, supported categories, available products, three-step journey, merchant CTA, and platform-principles sections.
+- Added mock location selection, mock current-location feedback, product filtering, and add-to-cart feedback.
+- Kept unavailable products out of the purchasable product grid.
+
+Not started by design:
+
+- Real location services, cart persistence, checkout, store/product detail pages, backend, database, and real API integrations.
