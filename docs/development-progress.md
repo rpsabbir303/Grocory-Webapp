@@ -98,3 +98,16 @@ Completed:
 Not started by design:
 
 - Checkout, payments, order placement, real image storage, backend, database, and real authentication.
+
+## 2026-11-11 — Shopping cart page
+
+Completed:
+
+- Added `/cart` with empty state, store summary, cart items, quantity controls, removal, clear-cart confirmation, and order summary.
+- Extended the existing cart context with quantity updates, removal, clear-cart behavior, stock limits, and lightweight localStorage persistence.
+- Added checkout navigation to `/checkout` with a scope-limited placeholder page.
+- Delivery fee is shown only when present in mock store data; otherwise the summary clearly marks it as to be determined.
+
+Not started by design:
+
+- Checkout form, address selection, payments, order placement, backend, database, and real API integrations.
