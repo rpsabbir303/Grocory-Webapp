@@ -85,3 +85,16 @@ Completed:
 Not started by design:
 
 - Checkout, payments, order placement, real calling/chat, GPS/maps, backend, database, and real authentication.
+
+## 2026-11-11 — Product details page
+
+Completed:
+
+- Added `/product/[slug]` with product image gallery/fallback, product information, stock state, condition note, quantity control, and cart action.
+- Added associated store information with status, optional verification, distance, and storefront link.
+- Added same-store related product navigation and unknown-product handling.
+- Reused the shared cart context and one-store-per-cart confirmation flow with quantity-aware replacement.
+
+Not started by design:
+
+- Checkout, payments, order placement, real image storage, backend, database, and real authentication.
