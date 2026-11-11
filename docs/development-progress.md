@@ -59,3 +59,15 @@ Completed:
 Not started by design:
 
 - Real location services, cart persistence, checkout, store/product detail pages, backend, database, and real API integrations.
+
+## 2026-11-11 — Nearby stores listing
+
+Completed:
+
+- Added `/stores` with selected-location display, mock location switching, 500m/1km radius controls, result counts, and empty state.
+- Added store-name search, category filtering, availability filtering, nearest sorting, and alphabetical sorting.
+- Reused centralized mock store data and shared design-system components.
+
+Not started by design:
+
+- Maps, GPS, real location services, store detail pages, backend, database, and real API integrations.
