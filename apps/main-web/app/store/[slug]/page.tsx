@@ -1,2 +1,2 @@
 import { Storefront } from '../../components/storefront';
-export default function StorePage({ params }: { params: { slug: string } }) { return <Storefront slug={params.slug} />; }
+export default async function StorePage({ params }: { params: Promise<{ slug: string }> }) { const { slug } = await params; return <Storefront slug={slug} />; }

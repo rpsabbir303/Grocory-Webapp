@@ -1,2 +1,2 @@
 import { ProductForm } from '../../../../components/merchant-products';
-export default function EditProductPage({ params }: { params: { id: string } }) { return <ProductForm productId={params.id} />; }
+export default async function EditProductPage({ params }: { params: Promise<{ id: string }> }) { const { id } = await params; return <ProductForm productId={id} />; }

@@ -16,3 +16,6 @@ export type BillingStatus = 'paid' | 'pending' | 'due' | 'failed';
 export interface BillingTransaction { id: string; invoiceNumber?: string; merchantId: string; storeId?: string; subscriptionId: string; plan: string; billingPeriod: string; amount: number; paymentMethod?: 'bKash' | 'Nagad' | 'cash' | 'mock'; status: BillingStatus; paymentDate?: string; createdAt: string; }
 export interface MerchantNotificationPreferences { newOrders: boolean; orderStatusUpdates: boolean; lowStockAlerts: boolean; subscriptionReminders: boolean; accountUpdates: boolean; }
 export interface MerchantSettings { merchantId: string; fullName: string; mobile: string; email?: string; avatarUrl?: string; notifications: MerchantNotificationPreferences; }
+export type SupportCategory = 'account' | 'store' | 'products' | 'orders' | 'billing' | 'technical';
+export type SupportTicketStatus = 'open' | 'in_progress' | 'resolved' | 'closed';
+export interface SupportTicket { id: string; merchantId: string; subject: string; category: SupportCategory; orderId?: string; description: string; status: SupportTicketStatus; createdAt: string; updatedAt: string; }

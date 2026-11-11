@@ -328,3 +328,50 @@ Completed:
 Not started by design:
 
 - Real password changes, 2FA, notification delivery, account deletion/deactivation enforcement, backend APIs, and database integration.
+
+## 2026-11-12 — Merchant support and help center
+
+Completed:
+
+- Added `/merchant/support` with support category cards, searchable/category-filtered FAQs, and expandable answers.
+- Added mock support request creation with validation, character limits, generated ticket IDs, and Open status.
+- Added merchant-scoped support request history with ticket search, status filtering, and ticket details.
+- Added centralized support categories, FAQ data, ticket types, and localStorage-backed mock support service methods.
+
+Not started by design:
+
+- Live agent messaging, real email/helpdesk integrations, automated replies, ticket status administration, backend APIs, and database integration.
+
+## 2026-11-12 — Local development readiness verification
+
+Completed and verified:
+
+- Provisioned the repository-declared pnpm 9.15.0 through Corepack.
+- Installed workspace dependencies and generated `pnpm-lock.yaml` without upgrading package declarations.
+- Added the missing `@types/react` dev dependency to `@hyperlocal/ui` and the missing workspace `@hyperlocal/validation` dependency to `@hyperlocal/main-web`.
+- Fixed current implementation issues found by checks: malformed homepage/product JSX, Next.js 15 async dynamic route params, and `useSearchParams` prerender handling.
+- `corepack pnpm -r typecheck` passes for shared-types, validation, UI, api-client, main-web, and admin-web.
+- `corepack pnpm --filter @hyperlocal/main-web build` passes.
+- `corepack pnpm --filter @hyperlocal/admin-web build` passes.
+- Main development server verified at `http://localhost:3000` with HTTP 200.
+- Admin development server verified at `http://localhost:3001` with HTTP 200.
+- Root development aliases now invoke Corepack-managed pnpm, so `npm run dev` no longer reports a missing root script and the explicit `dev:main`/`dev:admin` aliases remain available.
+
+Known limitation:
+
+- No ESLint dependency or configuration exists in the repository. The deprecated `next lint` command starts an interactive setup prompt, so no lint configuration was added during this readiness pass. Next production builds completed their built-in compilation/type validation successfully.
+
+## 2026-11-12 — Complete route audit and navigation foundation
+
+Completed:
+
+- Audited the complete current Main Website and Admin Website App Router inventories, layouts, guards, and internal navigation references.
+- Added `MainWebsiteFrame` so customer, account, authentication, checkout, order, store, and merchant-application routes consistently receive the Main Website header/footer.
+- Kept all `/merchant/*` routes outside the customer shell so the dedicated Merchant Dashboard layout remains isolated.
+- Added `docs/route-audit.md` with route inventories, guard behavior, navigation structure, known gaps, and verification notes.
+
+Known route gaps documented rather than fabricated:
+
+- Category listing routes, search route, informational/legal footer routes, and the requested Admin feature routes are not implemented in the current repository.
+
+- Route audit verification: Main Website TypeScript and production build pass after shared shell changes; / and /stores returned HTTP 200 from the refreshed dev server. Tailwind build warnings indicate the existing config is detected but should be reviewed separately.

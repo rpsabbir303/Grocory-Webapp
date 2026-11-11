@@ -1,2 +1,2 @@
 import { OrderDetails } from '../../components/order-details';
-export default function OrderDetailsRoute({ params }: { params: { id: string } }) { return <OrderDetails orderId={params.id} />; }
+export default async function OrderDetailsRoute({ params }: { params: Promise<{ id: string }> }) { const { id } = await params; return <OrderDetails orderId={id} />; }

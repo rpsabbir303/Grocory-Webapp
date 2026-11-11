@@ -4,10 +4,11 @@
   "version": "0.1.0",
   "packageManager": "pnpm@9.15.0",
   "scripts": {
-    "dev:main": "pnpm --filter @hyperlocal/main-web dev",
-    "dev:admin": "pnpm --filter @hyperlocal/admin-web dev",
-    "build": "pnpm -r build",
-    "typecheck": "pnpm -r typecheck"
+    "dev": "corepack pnpm --filter @hyperlocal/main-web dev",
+    "dev:main": "corepack pnpm --filter @hyperlocal/main-web dev",
+    "dev:admin": "corepack pnpm --filter @hyperlocal/admin-web dev",
+    "build": "corepack pnpm -r build",
+    "typecheck": "corepack pnpm -r typecheck"
   },
   "devDependencies": {
     "typescript": "^5.7.2"
