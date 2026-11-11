@@ -155,6 +155,19 @@ Not started by design:
 
 - Admin approval, real file upload, NID verification, GPS/maps, subscription payments, notifications, backend, database, and merchant dashboard features.
 
+## 2026-11-12 — Merchant dashboard layout and overview
+
+Completed:
+
+- Added dedicated merchant dashboard shell with responsive sidebar/drawer navigation and active route states.
+- Added approved-application access gating with pending, rejected, suspended, and customer messaging.
+- Added overview metrics, product overview, store status, subscription overview, quick actions, and mock notifications.
+- Added placeholders for planned merchant sections without implementing their full functionality.
+
+Not started by design:
+
+- Product, inventory, order, subscription, billing, reporting, support functionality, real notifications, backend authorization, and database integration.
+
 ## 2026-11-12 — Authentication pages and user access flow
 
 Completed:
