@@ -63,3 +63,9 @@ Task 28.2 refreshed the existing merchant dashboard UI without changing routes, 
 - Redesigned `/merchant/store-sharing` with a premium store-link panel, QR presentation, sharing steps, and print-ready poster preview.
 - Preserved origin-based public URL generation, slug generation, QR canvas content, clipboard copy, native share fallback, QR PNG download, and print/Save-as-PDF poster behavior.
 - No new social platforms, upload service, PDF system, or share destinations were introduced.
+
+## Development-only merchant access fixture
+
+- Added `DevMerchantFixture`, activated only by opening the main app with the exact query string `?devMerchantFixture=1` while running in development mode.
+- It reuses the approved fixture already present in `scripts/verify-ui-redesign.cjs` and writes to `localmarket-merchant-application` only when that key is absent.
+- It never runs in production and never overwrites an existing merchant application. Remove the fixture by clearing that localStorage key in browser DevTools; reload without the query string to return to normal behavior.

@@ -96,6 +96,18 @@ Verification limitations:
 
 - Automated typecheck/build verification was run. Browser-level testing of clipboard permissions, native share availability, popup blocking, QR download, and responsive layouts remains to be performed separately.
 
+## 2026-11-13 — Development-only merchant access fixture
+
+Completed:
+
+- Added a query-activated development-only approved merchant fixture using the exact object and `localmarket-merchant-application` storage key from the existing UI verification harness.
+- The fixture is non-overwriting and isolated from production; the existing `application?.status === 'approved'` guard is unchanged.
+
+Activation:
+
+- Run the main app in development mode and open `http://localhost:3000/merchant/dashboard?devMerchantFixture=1`.
+- Remove access by deleting `localmarket-merchant-application` from browser localStorage and reloading without the query string.
+
 Verification limitations:
 
 - Automated typecheck/build verification was run. Browser-level testing of every order transition and responsive state remains to be performed separately.
