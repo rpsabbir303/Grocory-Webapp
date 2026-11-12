@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { Avatar, Badge, BrandLogo, Button, Card, Dropdown, Icon } from '@hyperlocal/ui';
@@ -19,8 +19,10 @@ const titleFor = (pathname: string) => {
 };
 
 export function MerchantDashboardShell({ children }: Readonly<{ children: React.ReactNode }>) {
-  const pathname = usePathname(); const router = useRouter(); const [open, setOpen] = useState(false); const application = readMerchantApplication();
+  const pathname = usePathname(); const router = useRouter(); const [open, setOpen] = useState(false); const [mounted, setMounted] = useState(false); const application = readMerchantApplication();
+  useEffect(() => setMounted(true), []);
   const onboardingRoute = pathname === '/merchant/apply' || pathname === '/merchant/application/status';
+  if (!mounted) return <main className="merchant-area min-h-screen bg-slate-50" aria-busy="true"><div className="mx-auto max-w-7xl px-4 py-16 text-sm text-slate-500">Loading merchant workspace…</div></main>;
   if (onboardingRoute) return <main className="merchant-area min-h-screen bg-slate-50">{children}</main>;
   if (application?.status !== 'approved') return <main className="mx-auto max-w-2xl px-4 py-16 text-center"><Card><Badge tone={application?.status === 'suspended' || application?.status === 'rejected' ? 'error' : 'warning'}>{application?.status ?? 'customer'}</Badge><h1 className="mt-4 text-2xl font-bold">Merchant dashboard unavailable</h1><p className="mt-3 text-slate-600">{application?.status === 'under_review' ? 'Your application is awaiting Admin review.' : application?.status === 'suspended' ? 'Merchant access is currently restricted.' : application?.status === 'rejected' ? 'Review your application status before resubmitting.' : 'Submit a merchant application to access this workspace.'}</p><Button className="mt-6" onClick={() => router.push(application ? '/become-merchant/status' : '/become-merchant')}>{application ? 'View application status' : 'Become a Merchant'}</Button></Card></main>;
   const publicStore = `/store/${application.businessName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`; const pageTitle = titleFor(pathname); const breadcrumb = pageTitle === 'Overview' ? 'Overview' : `Overview / ${pageTitle}`;
