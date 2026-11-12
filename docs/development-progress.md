@@ -31,6 +31,16 @@ Not started by design:
 
 - Complete website pages, feature-specific flows, Storybook, backend, database, and real API integrations.
 
+## 2026-11-13 — Merchant dashboard layout and overview redesign
+
+Completed:
+
+- Refreshed the merchant sidebar with LocalMarket branding, icon-led navigation, active state, and responsive drawer behavior.
+- Refreshed the merchant header with workspace context, notification disclosure, account menu, and public-store action.
+- Redesigned the overview welcome section, metric cards, recent orders, product overview, store status, subscription summary, and notifications.
+- Reused existing merchant routes, authorization gate, mock services, shared types, and UI primitives.
+- Added `docs/merchant-dashboard-redesign.md`.
+
 ## 2026-11-11 — Main website layout and navigation
 
 Completed:
