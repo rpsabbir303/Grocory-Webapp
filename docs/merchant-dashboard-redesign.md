@@ -69,3 +69,9 @@ Task 28.2 refreshed the existing merchant dashboard UI without changing routes, 
 - Added `DevMerchantFixture`, activated only by opening the main app with the exact query string `?devMerchantFixture=1` while running in development mode.
 - It reuses the approved fixture already present in `scripts/verify-ui-redesign.cjs` and writes to `localmarket-merchant-application` only when that key is absent.
 - It never runs in production and never overwrites an existing merchant application. Remove the fixture by clearing that localStorage key in browser DevTools; reload without the query string to return to normal behavior.
+
+## Shared merchant dashboard shell
+
+- Moved the existing `MerchantDashboardShell` to the root `/merchant` layout so dashboard pages share one sidebar, responsive navigation, top header, notifications, profile menu, and public-store action.
+- Active navigation, page title, and breadcrumb now derive from the current merchant pathname, including nested order and product routes.
+- The legacy merchant application placeholder routes remain outside the dashboard shell; merchant authorization and all page business logic are unchanged.

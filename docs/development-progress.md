@@ -522,3 +522,10 @@ Merchant onboarding navigation fix:
 - No application routes to `/become-merchant`; drafts continue at `/become-merchant/application`; submitted/under-review, rejected, and suspended applications open `/become-merchant/status`; approved applications open `/merchant/dashboard`.
 - The `/merchant/apply` placeholder is no longer used by the shared header, and the dashboard authorization guard and development fixture remain unchanged.
 - Verification: TypeScript and production build checks were run after the change. Browser click-through verification was limited to route/build checks in this environment; no application data or authorization rules were changed.
+
+Merchant dashboard shell consistency fix:
+
+- Rooted the existing `MerchantDashboardShell` at `app/merchant/layout.tsx`, so merchant workspace pages share the same sidebar and top navigation instead of only `/merchant/dashboard` doing so.
+- Added pathname-based active navigation, page title, and breadcrumb updates while preserving nested merchant routes and page content.
+- `/merchant/apply` and `/merchant/application/status` retain their standalone placeholder presentation; the approved merchant guard remains unchanged.
+- TypeScript and production build checks pass. Live route checks were run with the development merchant fixture available; route rendering and shell verification are subject to the existing localStorage-based fixture setup.
