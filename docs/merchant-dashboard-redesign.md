@@ -37,3 +37,10 @@ Task 28.2 refreshed the existing merchant dashboard UI without changing routes, 
 - Redesigned `/merchant/store` with a store identity/profile header, image-management surfaces, editable details, location panel, availability card, and public-store preview.
 - Retained the existing local mock update service, file validation and preview behavior, availability confirmation, validation messages, and public-store route.
 - The image controls remain browser-local previews; no upload API was added.
+
+## Product Management follow-up
+
+- Redesigned `/merchant/products` with catalogue metrics, search/status controls, a desktop table, and a compact mobile product list.
+- Redesigned `/merchant/products/new` and `/merchant/products/[id]/edit` with grouped product details, commercial fields, validation feedback, actions, and existing-image presentation.
+- Preserved the existing product filtering, CRUD callbacks, mock service calls, validation rules, routes, and customer product links.
+- No product image-upload flow or pagination was added because those capabilities were not present in the existing implementation.

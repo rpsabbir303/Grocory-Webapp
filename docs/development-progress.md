@@ -53,6 +53,18 @@ Remaining limitations:
 
 - Image selection remains a local browser preview and is not uploaded to a backend, matching the existing mock architecture.
 
+## 2026-11-13 — Merchant Product Management UI redesign
+
+Completed:
+
+- Refreshed the product listing with summary metrics, search/status controls, responsive table/card presentation, status badges, and action hierarchy.
+- Refreshed add/edit product forms with grouped information, pricing/stock panels, validation feedback, and existing image presentation.
+- Preserved product routes, mock CRUD services, filtering, activation/deactivation, deletion confirmation, validation, and customer product links.
+
+Remaining limitations:
+
+- The existing product flow has no image upload or pagination behavior; the redesign does not introduce either capability.
+
 ## 2026-11-11 — Main website layout and navigation
 
 Completed:
