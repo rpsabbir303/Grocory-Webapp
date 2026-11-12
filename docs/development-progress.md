@@ -529,3 +529,11 @@ Merchant dashboard shell consistency fix:
 - Added pathname-based active navigation, page title, and breadcrumb updates while preserving nested merchant routes and page content.
 - `/merchant/apply` and `/merchant/application/status` retain their standalone placeholder presentation; the approved merchant guard remains unchanged.
 - TypeScript and production build checks pass. Live route checks were run with the development merchant fixture available; route rendering and shell verification are subject to the existing localStorage-based fixture setup.
+
+Next.js development runtime stabilization:
+
+- Confirmed recurring missing-chunk and Webpack runtime errors were caused by `next dev` and `next build/start` sharing the default `.next` output directory during local verification.
+- Configured `apps/main-web/next.config.ts` to use `.next-dev` for development and `.next-prod` for production, and ignored both generated directories.
+- Safe commands: `pnpm --filter @hyperlocal/main-web dev` for development; `pnpm --filter @hyperlocal/main-web build` followed by `pnpm --filter @hyperlocal/main-web start` (or `next start`) for production.
+- Verification passed while development was running during production build, after production startup, and after development restart. Merchant dashboard, store, products, inventory, and orders returned HTTP 200; the full merchant route set also returned HTTP 200 in production.
+- No dependency versions, authentication, authorization, routes, or generated build files were changed or committed.
