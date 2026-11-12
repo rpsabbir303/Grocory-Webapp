@@ -85,6 +85,17 @@ Completed:
 - Refreshed `/merchant/orders/[id]` with structured order overview, customer/delivery information, line items, financial summary, and transition action presentation.
 - Preserved the existing order service calls, search/filter/sort behavior, totals, item calculations, valid status transitions, confirmation dialog, and customer contact placeholder.
 
+## 2026-11-13 — Merchant Store Sharing and QR UI redesign
+
+Completed:
+
+- Refreshed `/merchant/store-sharing` with store identity/link presentation, QR code framing, sharing instructions, and poster preview.
+- Preserved the existing slug/origin URL generation, QR canvas generation, clipboard copy, native sharing fallback, QR PNG download, and print/Save-as-PDF behavior.
+
+Verification limitations:
+
+- Automated typecheck/build verification was run. Browser-level testing of clipboard permissions, native share availability, popup blocking, QR download, and responsive layouts remains to be performed separately.
+
 Verification limitations:
 
 - Automated typecheck/build verification was run. Browser-level testing of every order transition and responsive state remains to be performed separately.

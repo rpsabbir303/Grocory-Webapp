@@ -57,3 +57,9 @@ Task 28.2 refreshed the existing merchant dashboard UI without changing routes, 
 - Redesigned `/merchant/orders` with order summary metrics, status navigation, search/sort controls, responsive desktop/mobile order listings, and clearer payment/status presentation.
 - Redesigned `/merchant/orders/[id]` with structured overview, customer information, line items, financial summary, status action, and existing confirmation dialog.
 - Preserved the existing merchant-order service calls, filtering, sorting, order totals, item calculations, status transition map, and mock call action.
+
+## Store Sharing and QR follow-up
+
+- Redesigned `/merchant/store-sharing` with a premium store-link panel, QR presentation, sharing steps, and print-ready poster preview.
+- Preserved origin-based public URL generation, slug generation, QR canvas content, clipboard copy, native share fallback, QR PNG download, and print/Save-as-PDF poster behavior.
+- No new social platforms, upload service, PDF system, or share destinations were introduced.
