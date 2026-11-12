@@ -515,3 +515,10 @@ Final production verification:
 - Admin Website production build passes (exit 0), using the equivalent command from `apps/admin-web`.
 - Both builds completed compilation, built-in type validation, static generation, and trace collection. No dependency versions or lockfiles were changed.
 - Task 28.1 foundation implementation is complete. The separate pre-existing checkout navigation and merchant hydration findings remain open; full-platform functional completion is not claimed.
+
+Merchant onboarding navigation fix:
+
+- Updated `apps/main-web/app/components/main-header.tsx` so the shared desktop/mobile merchant entry uses the existing `localmarket-merchant-application` state.
+- No application routes to `/become-merchant`; drafts continue at `/become-merchant/application`; submitted/under-review, rejected, and suspended applications open `/become-merchant/status`; approved applications open `/merchant/dashboard`.
+- The `/merchant/apply` placeholder is no longer used by the shared header, and the dashboard authorization guard and development fixture remain unchanged.
+- Verification: TypeScript and production build checks were run after the change. Browser click-through verification was limited to route/build checks in this environment; no application data or authorization rules were changed.
