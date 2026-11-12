@@ -41,6 +41,18 @@ Completed:
 - Reused existing merchant routes, authorization gate, mock services, shared types, and UI primitives.
 - Added `docs/merchant-dashboard-redesign.md`.
 
+## 2026-11-13 — Merchant Store Management UI redesign
+
+Completed:
+
+- Reworked `/merchant/store` into a premium profile and management layout consistent with the merchant shell.
+- Added structured store identity, image previews and upload guidance, editable information, location, availability, and public preview sections.
+- Preserved the existing store state, validation, mock update service, file preview/removal behavior, availability confirmation, and public storefront navigation.
+
+Remaining limitations:
+
+- Image selection remains a local browser preview and is not uploaded to a backend, matching the existing mock architecture.
+
 ## 2026-11-11 — Main website layout and navigation
 
 Completed:

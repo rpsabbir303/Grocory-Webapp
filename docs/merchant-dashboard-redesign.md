@@ -28,4 +28,12 @@ Task 28.2 refreshed the existing merchant dashboard UI without changing routes, 
 
 ## Verification
 
-- TypeScript and production build verification should be run with `pnpm typecheck` and `pnpm build` from the repository root.
+- `pnpm typecheck` passed across the workspace.
+- Main web production build passed, including linting/type validation and static page generation.
+- Manual browser interaction testing remains to be performed for file selection/removal, availability confirmation, location editing, and responsive layouts.
+
+## Store Management follow-up
+
+- Redesigned `/merchant/store` with a store identity/profile header, image-management surfaces, editable details, location panel, availability card, and public-store preview.
+- Retained the existing local mock update service, file validation and preview behavior, availability confirmation, validation messages, and public-store route.
+- The image controls remain browser-local previews; no upload API was added.
