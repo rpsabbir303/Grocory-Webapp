@@ -65,6 +65,18 @@ Remaining limitations:
 
 - The existing product flow has no image upload or pagination behavior; the redesign does not introduce either capability.
 
+## 2026-11-13 — Merchant Inventory Management UI redesign
+
+Completed:
+
+- Refreshed `/merchant/inventory` with premium light-theme summary cards, responsive inventory table/cards, stock status presentation, and movement history table.
+- Restyled search, stock-status filtering, low-stock threshold control, Stock In/Stock Out dialog, validation feedback, loading, and empty states.
+- Preserved the existing stock calculations, threshold persistence, mock inventory service, movement history, validation, and product/store synchronization.
+
+Verification limitations:
+
+- Automated typecheck/build verification was run. Browser-level interaction testing for inventory controls remains to be performed separately.
+
 ## 2026-11-11 — Main website layout and navigation
 
 Completed:

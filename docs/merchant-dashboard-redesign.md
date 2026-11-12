@@ -44,3 +44,10 @@ Task 28.2 refreshed the existing merchant dashboard UI without changing routes, 
 - Redesigned `/merchant/products/new` and `/merchant/products/[id]/edit` with grouped product details, commercial fields, validation feedback, actions, and existing-image presentation.
 - Preserved the existing product filtering, CRUD callbacks, mock service calls, validation rules, routes, and customer product links.
 - No product image-upload flow or pagination was added because those capabilities were not present in the existing implementation.
+
+## Inventory Management follow-up
+
+- Redesigned `/merchant/inventory` with an operational page header, dynamic stock summary cards, responsive inventory table/cards, and movement-history table.
+- Restyled search, stock-status filtering, threshold control, Stock In/Stock Out adjustment dialog, validation feedback, and empty/loading states.
+- Preserved the existing threshold persistence, stock-status calculation, inventory service calls, movement history state, non-negative stock validation, and product data synchronization.
+- No new stock rules, records, pagination, or API behavior were introduced.
