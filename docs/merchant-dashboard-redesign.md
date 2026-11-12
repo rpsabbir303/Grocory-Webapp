@@ -51,3 +51,9 @@ Task 28.2 refreshed the existing merchant dashboard UI without changing routes, 
 - Restyled search, stock-status filtering, threshold control, Stock In/Stock Out adjustment dialog, validation feedback, and empty/loading states.
 - Preserved the existing threshold persistence, stock-status calculation, inventory service calls, movement history state, non-negative stock validation, and product data synchronization.
 - No new stock rules, records, pagination, or API behavior were introduced.
+
+## Order Management follow-up
+
+- Redesigned `/merchant/orders` with order summary metrics, status navigation, search/sort controls, responsive desktop/mobile order listings, and clearer payment/status presentation.
+- Redesigned `/merchant/orders/[id]` with structured overview, customer information, line items, financial summary, status action, and existing confirmation dialog.
+- Preserved the existing merchant-order service calls, filtering, sorting, order totals, item calculations, status transition map, and mock call action.

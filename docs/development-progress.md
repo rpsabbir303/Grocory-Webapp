@@ -77,6 +77,18 @@ Verification limitations:
 
 - Automated typecheck/build verification was run. Browser-level interaction testing for inventory controls remains to be performed separately.
 
+## 2026-11-13 — Merchant Order Management UI redesign
+
+Completed:
+
+- Refreshed `/merchant/orders` with dynamic order metrics, status navigation, search/sort controls, responsive order table/cards, and status/payment hierarchy.
+- Refreshed `/merchant/orders/[id]` with structured order overview, customer/delivery information, line items, financial summary, and transition action presentation.
+- Preserved the existing order service calls, search/filter/sort behavior, totals, item calculations, valid status transitions, confirmation dialog, and customer contact placeholder.
+
+Verification limitations:
+
+- Automated typecheck/build verification was run. Browser-level testing of every order transition and responsive state remains to be performed separately.
+
 ## 2026-11-11 — Main website layout and navigation
 
 Completed:
