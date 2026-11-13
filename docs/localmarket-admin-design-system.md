@@ -47,6 +47,10 @@ Admin verification, merchant, customer, store, product, order, subscription, ser
 
 `/complaints` and `/complaints/[id]` use the existing `SupportTicket` model and support-ticket service. The views expose only stored ticket IDs, subjects, categories, descriptions, merchant/store/order references, statuses, and timestamps. The current service is merchant-scoped and does not provide an Admin-wide listing, assignment, priority, notes, responses, or status-transition methods, so the Admin experience is read-only and does not invent those fields or actions.
 
+## Service areas management
+
+`/service-areas` documents the current coverage inputs without creating fictitious geographic records. The existing model has no `ServiceArea` entity, named area records, coordinates, boundaries, map integration, or service-area CRUD methods. Store discovery does expose the configured 500m and 1km radius options and filters existing stores using their stored `distanceKm` values; the Admin page surfaces those facts and clearly marks dedicated service-area management as not configured.
+
 ## Store management
 
 `/stores` provides a searchable, filterable directory backed by existing `Store` records. `/stores/[id]` shows store overview, merchant association, location, operating fields, product/order counts, and the existing subscription-independent store data. Activate/deactivate uses `mockService.updateMerchantStore`; edit and suspend actions are omitted because no corresponding Admin service exists.
