@@ -43,6 +43,7 @@ Task 28.2 refreshed the existing merchant dashboard UI without changing routes, 
 - Redesigned `/merchant/products` with catalogue metrics, search/status controls, a desktop table, and a compact mobile product list.
 - Redesigned `/merchant/products/new` and `/merchant/products/[id]/edit` with grouped product details, commercial fields, validation feedback, actions, and existing-image presentation.
 - Preserved the existing product filtering, CRUD callbacks, mock service calls, validation rules, routes, and customer product links.
+- Added merchant-scoped product details at `/merchant/products/[id]`; the Products table View action now stays inside the merchant workspace while the public `/product/[slug]` route remains unchanged.
 - No product image-upload flow or pagination was added because those capabilities were not present in the existing implementation.
 
 ## Inventory Management follow-up

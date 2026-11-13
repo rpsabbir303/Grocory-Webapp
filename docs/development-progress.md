@@ -315,6 +315,7 @@ Not started by design:
 Completed:
 
 - Added `/merchant/products`, `/merchant/products/new`, and `/merchant/products/[id]/edit`.
+- Added `/merchant/products/[id]` with merchant-scoped product overview, images, pricing, inventory, status, store association, and existing activate/deactivate behavior.
 - Added merchant-scoped product listing with search, category/status filters, and price/newest sorting.
 - Added product create/edit form with validation, pricing, units, stock, active visibility, and mock image preview.
 - Added activate/deactivate and delete-with-confirmation actions.
