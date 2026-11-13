@@ -27,6 +27,10 @@ The dashboard uses responsive metric cards, catalogue activity, pending-action e
 
 Admin verification, merchant, customer, store, product, order, subscription, billing, complaint, service-area, report, user, role, audit, and settings pages still require their own routes and data-backed flows.
 
+## Store management
+
+`/stores` provides a searchable, filterable directory backed by existing `Store` records. `/stores/[id]` shows store overview, merchant association, location, operating fields, product/order counts, and the existing subscription-independent store data. Activate/deactivate uses `mockService.updateMerchantStore`; edit and suspend actions are omitted because no corresponding Admin service exists.
+
 ## Merchant management
 
 `/merchants` provides a searchable, filterable directory backed by the existing `Store` records. `/merchants/[id]` shows the merchant profile represented by `ownerId`, store verification and availability, store location/category, catalogue products, and subscription data only when the existing subscription service supports that merchant. Edit, suspend, reactivate, joined-date, reviewer, and account-status controls are intentionally omitted because no corresponding Admin data or service exists.
