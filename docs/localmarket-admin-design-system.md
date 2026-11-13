@@ -31,6 +31,10 @@ Admin verification, merchant, customer, store, product, order, subscription, bil
 
 `/products` provides a searchable, category/status-filtered directory backed by existing `Product` records. `/products/[id]` shows real product images, description, category, unit, price, inventory, status, and Merchant/Store links. Activate/deactivate and remove use existing product services with confirmation; SKU, brand, approval/rejection, previous price, and created date are not supported by the current model.
 
+## Order management
+
+`/orders` provides a marketplace-wide directory backed by the existing browser order store, with search and supported status filters. `/orders/[id]` shows order totals, items, customer/store relationships, COD payment method, delivery fields, and available timestamps. Status advancement follows the existing `pending → accepted → packing → out_for_delivery → delivered` service rules; cancellation, refunds, payment status, and separate delivery status are not supported.
+
 ## Store management
 
 `/stores` provides a searchable, filterable directory backed by existing `Store` records. `/stores/[id]` shows store overview, merchant association, location, operating fields, product/order counts, and the existing subscription-independent store data. Activate/deactivate uses `mockService.updateMerchantStore`; edit and suspend actions are omitted because no corresponding Admin service exists.
