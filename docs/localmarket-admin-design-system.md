@@ -30,3 +30,7 @@ Admin verification, merchant, customer, store, product, order, subscription, bil
 ## Merchant management
 
 `/merchants` provides a searchable, filterable directory backed by the existing `Store` records. `/merchants/[id]` shows the merchant profile represented by `ownerId`, store verification and availability, store location/category, catalogue products, and subscription data only when the existing subscription service supports that merchant. Edit, suspend, reactivate, joined-date, reviewer, and account-status controls are intentionally omitted because no corresponding Admin data or service exists.
+
+## Customer management
+
+`/customers` is backed by the existing `mockCustomer`, saved addresses, and browser-backed order service. `/customers/[id]` shows only the available profile, order, and address data. Email, registration date, account status, activity logs, edit, suspend, and reactivate actions are not supported by the current customer model or services and are not treated as functional Admin capabilities.
