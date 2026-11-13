@@ -19,6 +19,10 @@ The Super Admin application uses a light premium SaaS surface system built on th
 
 The dashboard uses responsive metric cards, catalogue activity, pending-action empty states, recent products, and recent orders. Values come from existing mock stores, products, customer, and order services. Unsupported admin datasets are represented as unavailable rather than fabricated.
 
+## Merchant verification
+
+`/merchants/verification` provides searchable and status-filtered application review using the existing `MerchantApplication` model and browser-stored application record. `/merchants/verification/[id]` displays applicant, business, location, status, and document-readiness information. The current onboarding flow does not persist a list of applications or uploaded files and exposes no Admin approval, rejection, reviewer, or notes service; those controls remain explicitly unavailable.
+
 ## Remaining work
 
 Admin verification, merchant, customer, store, product, order, subscription, billing, complaint, service-area, report, user, role, audit, and settings pages still require their own routes and data-backed flows.
