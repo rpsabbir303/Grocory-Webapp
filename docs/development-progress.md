@@ -9,6 +9,7 @@ Completed:
 - Added Admin Merchant Management routes at `/merchants` and `/merchants/[id]` with Store-backed directory filters, details, catalogue, store verification/availability, and supported subscription visibility; unsupported account actions remain omitted.
 - Added Admin Customer Management routes at `/customers` and `/customers/[id]` with the existing customer, address, and order data; unsupported account fields and management actions remain omitted or explicitly documented.
 - Added Admin Store Management routes at `/stores` and `/stores/[id]` with Store-backed search/filtering, merchant association, location/operations details, product/order metrics, and confirmed activate/deactivate actions through the existing store service.
+- Added Admin Product Management routes at `/products` and `/products/[id]` with Product-backed search/filtering, inventory/status views, Merchant/Store links, and confirmed activate/deactivate/remove actions through existing product services.
 
 - Inspected the workspace; no existing files or business/product documentation were present.
 - Created pnpm workspace and root TypeScript configuration.

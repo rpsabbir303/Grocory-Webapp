@@ -27,6 +27,10 @@ The dashboard uses responsive metric cards, catalogue activity, pending-action e
 
 Admin verification, merchant, customer, store, product, order, subscription, billing, complaint, service-area, report, user, role, audit, and settings pages still require their own routes and data-backed flows.
 
+## Product management
+
+`/products` provides a searchable, category/status-filtered directory backed by existing `Product` records. `/products/[id]` shows real product images, description, category, unit, price, inventory, status, and Merchant/Store links. Activate/deactivate and remove use existing product services with confirmation; SKU, brand, approval/rejection, previous price, and created date are not supported by the current model.
+
 ## Store management
 
 `/stores` provides a searchable, filterable directory backed by existing `Store` records. `/stores/[id]` shows store overview, merchant association, location, operating fields, product/order counts, and the existing subscription-independent store data. Activate/deactivate uses `mockService.updateMerchantStore`; edit and suspend actions are omitted because no corresponding Admin service exists.
