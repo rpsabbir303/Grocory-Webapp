@@ -6,6 +6,7 @@ Completed:
 
 - Established the Super Admin dashboard foundation in `apps/admin-web` with a responsive grouped shell, admin navigation, header, profile footer, and data-backed overview cards/sections. Documented the isolated Admin design system in `docs/localmarket-admin-design-system.md`; planned Admin management routes remain intentionally unimplemented.
 - Added Admin Merchant Verification routes at `/merchants/verification` and `/merchants/verification/[id]` with real application fields, search, status filtering, accurate counts, responsive table/cards, details, and explicit unavailable states for unsupported persisted documents and review actions.
+- Added Admin Merchant Management routes at `/merchants` and `/merchants/[id]` with Store-backed directory filters, details, catalogue, store verification/availability, and supported subscription visibility; unsupported account actions remain omitted.
 
 - Inspected the workspace; no existing files or business/product documentation were present.
 - Created pnpm workspace and root TypeScript configuration.
