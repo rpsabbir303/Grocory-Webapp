@@ -44,6 +44,7 @@ Task 28.2 refreshed the existing merchant dashboard UI without changing routes, 
 - Redesigned `/merchant/products/new` and `/merchant/products/[id]/edit` with grouped product details, commercial fields, validation feedback, actions, and existing-image presentation.
 - Preserved the existing product filtering, CRUD callbacks, mock service calls, validation rules, routes, and customer product links.
 - Added merchant-scoped product details at `/merchant/products/[id]`; the Products table View action now stays inside the merchant workspace while the public `/product/[slug]` route remains unchanged.
+- Standardized merchant sidebar navigation contrast with token-backed brand surfaces, readable light default/footer states, dark-green hover states, light-green active states, and visible keyboard focus rings without changing layout or navigation behavior.
 - No product image-upload flow or pagination was added because those capabilities were not present in the existing implementation.
 
 ## Inventory Management follow-up

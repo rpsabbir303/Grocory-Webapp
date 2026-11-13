@@ -10,7 +10,7 @@ export const sharedTheme = {
     // Compatibility aliases keep every existing utility on the central theme.
     slate: palette.neutral, teal: palette.primary, green: palette.success,
     amber: palette.warning, red: palette.error, sky: palette.info,
-    brand: { primary: t.colors.primary, hover: t.colors.primaryHover, secondary: t.colors.secondary, accent: t.colors.accent },
+    brand: { ...palette.primary, primary: t.colors.primary, hover: t.colors.primaryHover, secondary: t.colors.secondary, accent: t.colors.accent },
     secondary: palette.secondary, accent: palette.accent,
     canvas: t.colors.canvas, surface: t.colors.surface, elevated: t.colors.elevated, ink: t.colors.ink,
     content: { DEFAULT: t.colors.textPrimary, secondary: t.colors.textSecondary, muted: t.colors.textMuted },
