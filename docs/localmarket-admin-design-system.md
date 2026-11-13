@@ -70,3 +70,6 @@ Admin verification, merchant, customer, store, product, order, subscription, ser
 ## Customer management
 
 `/customers` is backed by the existing `mockCustomer`, saved addresses, and browser-backed order service. `/customers/[id]` shows only the available profile, order, and address data. Email, registration date, account status, activity logs, edit, suspend, and reactivate actions are not supported by the current customer model or services and are not treated as functional Admin capabilities.
+## Settings management
+
+`/settings` is an informational, read-only platform settings view. The current architecture has no platform configuration type or Admin persistence service. It documents existing branding, BDT display, COD behavior, 500m/1km discovery inputs, one-store-per-cart behavior, merchant-scoped settings, and mock subscription defaults while marking proposed values as non-final. No edit, save, reset, gateway, notification, or secret controls are presented without persistence and authorization support.
