@@ -39,6 +39,10 @@ Admin verification, merchant, customer, store, product, order, subscription, bil
 
 `/subscriptions` and `/subscriptions/[id]` use the existing configured merchant subscription service, including its mock monthly amount, trial duration, supported statuses, renewal service, and billing/history records when available. Renewal is the only implemented lifecycle action. Plan editing, cancellation, trial extension, payment processing, and invoice management are not supported by the current architecture.
 
+## Billing management
+
+`/billing` and `/billing/[id]` use existing `BillingTransaction` records returned by the subscription/billing services. The UI filters the supported `paid`, `pending`, `due`, and `failed` statuses and shows only stored amounts and fields. Invoice documents, payment processing, retries, manual paid-state changes, refunds, and tax/discount calculations are not supported.
+
 ## Store management
 
 `/stores` provides a searchable, filterable directory backed by existing `Store` records. `/stores/[id]` shows store overview, merchant association, location, operating fields, product/order counts, and the existing subscription-independent store data. Activate/deactivate uses `mockService.updateMerchantStore`; edit and suspend actions are omitted because no corresponding Admin service exists.
