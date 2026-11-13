@@ -25,7 +25,7 @@ The dashboard uses responsive metric cards, catalogue activity, pending-action e
 
 ## Remaining work
 
-Admin verification, merchant, customer, store, product, order, subscription, billing, complaint, service-area, report, user, role, audit, and settings pages still require their own routes and data-backed flows.
+Admin verification, merchant, customer, store, product, order, subscription, service-area, report, user, role, audit, and settings pages still require their own routes and data-backed flows.
 
 ## Product management
 
@@ -42,6 +42,10 @@ Admin verification, merchant, customer, store, product, order, subscription, bil
 ## Billing management
 
 `/billing` and `/billing/[id]` use existing `BillingTransaction` records returned by the subscription/billing services. The UI filters the supported `paid`, `pending`, `due`, and `failed` statuses and shows only stored amounts and fields. Invoice documents, payment processing, retries, manual paid-state changes, refunds, and tax/discount calculations are not supported.
+
+## Complaints management
+
+`/complaints` and `/complaints/[id]` use the existing `SupportTicket` model and support-ticket service. The views expose only stored ticket IDs, subjects, categories, descriptions, merchant/store/order references, statuses, and timestamps. The current service is merchant-scoped and does not provide an Admin-wide listing, assignment, priority, notes, responses, or status-transition methods, so the Admin experience is read-only and does not invent those fields or actions.
 
 ## Store management
 

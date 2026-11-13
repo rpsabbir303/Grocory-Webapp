@@ -13,6 +13,7 @@ Completed:
 - Added Admin Order Management routes at `/orders` and `/orders/[id]` with marketplace-wide order search/status filters, relationship links, item/payment/delivery details, and valid status advancement through the existing order service.
 - Added Admin Subscription Management routes at `/subscriptions` and `/subscriptions/[id]` with configured subscription/trial data, supported status filters, billing/history visibility, merchant/store links, and confirmed renewal through the existing subscription service.
 - Added Admin Billing Management routes at `/billing` and `/billing/[id]` with existing transaction search/status filters, financial record details, merchant/subscription links, and explicit unsupported-action states for invoice/payment operations.
+- Added Admin Complaints Management routes at `/complaints` and `/complaints/[id]` using the existing merchant-scoped `SupportTicket` service, supported categories/statuses, related merchant/store/order references, and read-only detail states where Admin actions are not available.
 
 - Inspected the workspace; no existing files or business/product documentation were present.
 - Created pnpm workspace and root TypeScript configuration.
