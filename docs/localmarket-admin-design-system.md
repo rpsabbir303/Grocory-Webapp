@@ -51,6 +51,10 @@ Admin verification, merchant, customer, store, product, order, subscription, ser
 
 `/service-areas` documents the current coverage inputs without creating fictitious geographic records. The existing model has no `ServiceArea` entity, named area records, coordinates, boundaries, map integration, or service-area CRUD methods. Store discovery does expose the configured 500m and 1km radius options and filters existing stores using their stored `distanceKm` values; the Admin page surfaces those facts and clearly marks dedicated service-area management as not configured.
 
+## Reports and analytics
+
+`/reports` calculates marketplace composition from the existing store and product arrays, reads stored orders through the existing merchant-order service, and reads merchant-1 billing/subscription records through the existing billing services. Its date selector filters timestamped order records for today, 7, 30, 90 days, or all stored records. The order CSV export is generated from the selected order records in the browser. Historical registration trends, conversion rates, forecasts, Admin-wide merchant/customer collections, and billing trends are not shown because the current model does not provide those datasets.
+
 ## Store management
 
 `/stores` provides a searchable, filterable directory backed by existing `Store` records. `/stores/[id]` shows store overview, merchant association, location, operating fields, product/order counts, and the existing subscription-independent store data. Activate/deactivate uses `mockService.updateMerchantStore`; edit and suspend actions are omitted because no corresponding Admin service exists.

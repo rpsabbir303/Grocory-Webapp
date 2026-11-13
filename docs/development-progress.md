@@ -15,6 +15,7 @@ Completed:
 - Added Admin Billing Management routes at `/billing` and `/billing/[id]` with existing transaction search/status filters, financial record details, merchant/subscription links, and explicit unsupported-action states for invoice/payment operations.
 - Added Admin Complaints Management routes at `/complaints` and `/complaints/[id]` using the existing merchant-scoped `SupportTicket` service, supported categories/statuses, related merchant/store/order references, and read-only detail states where Admin actions are not available.
 - Added the Admin Service Areas route at `/service-areas`, documenting the existing 500m/1km store-discovery radius inputs and current absence of ServiceArea records, geo-coordinates, boundaries, maps, or CRUD services.
+- Added the Admin Reports & Analytics route at `/reports` with real store/product composition, stored order status analytics, date filtering, billing/subscription totals, and a working CSV export for selected order records; unsupported historical and Admin-wide metrics remain explicitly unavailable.
 
 - Inspected the workspace; no existing files or business/product documentation were present.
 - Created pnpm workspace and root TypeScript configuration.
