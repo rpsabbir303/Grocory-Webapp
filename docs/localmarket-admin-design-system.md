@@ -73,3 +73,7 @@ Admin verification, merchant, customer, store, product, order, subscription, ser
 ## Settings management
 
 `/settings` is an informational, read-only platform settings view. The current architecture has no platform configuration type or Admin persistence service. It documents existing branding, BDT display, COD behavior, 500m/1km discovery inputs, one-store-per-cart behavior, merchant-scoped settings, and mock subscription defaults while marking proposed values as non-final. No edit, save, reset, gateway, notification, or secret controls are presented without persistence and authorization support.
+
+## Final QA status
+
+The Admin route inventory is complete for the current design phase: dashboard, marketplace, business, platform, security, and settings routes are present under the shared `AdminShell`. The shell uses consistent active navigation semantics, route-aware header titles, keyboard focus styles, mobile drawer behavior, and scrollable navigation. Pages with missing backend models remain explicitly read-only or unavailable, including service-area CRUD, security management, platform settings, and audit logging. Responsive tables use horizontal overflow or mobile card alternatives where implemented; browser-backed data and mock-service limitations remain documented.
