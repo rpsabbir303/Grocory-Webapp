@@ -55,6 +55,10 @@ Admin verification, merchant, customer, store, product, order, subscription, ser
 
 `/reports` calculates marketplace composition from the existing store and product arrays, reads stored orders through the existing merchant-order service, and reads merchant-1 billing/subscription records through the existing billing services. Its date selector filters timestamped order records for today, 7, 30, 90 days, or all stored records. The order CSV export is generated from the selected order records in the browser. Historical registration trends, conversion rates, forecasts, Admin-wide merchant/customer collections, and billing trends are not shown because the current model does not provide those datasets.
 
+## Security management
+
+`/security/admin-users`, `/security/roles`, and `/security/audit-logs` provide transparent security capability states. The current project exposes only the broad `UserRole` union (`customer`, `merchant`, `admin`) and a static Admin shell identity; it does not provide AdminUser, named Role, Permission, AuditLog, session-history, or security mutation services. Accordingly, the pages do not invent accounts, permission checkboxes, audit events, credentials, or consequential actions. Frontend visibility is not treated as backend authorization, and real security enforcement/auditability remains a backend capability gap.
+
 ## Store management
 
 `/stores` provides a searchable, filterable directory backed by existing `Store` records. `/stores/[id]` shows store overview, merchant association, location, operating fields, product/order counts, and the existing subscription-independent store data. Activate/deactivate uses `mockService.updateMerchantStore`; edit and suspend actions are omitted because no corresponding Admin service exists.

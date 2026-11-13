@@ -16,6 +16,7 @@ Completed:
 - Added Admin Complaints Management routes at `/complaints` and `/complaints/[id]` using the existing merchant-scoped `SupportTicket` service, supported categories/statuses, related merchant/store/order references, and read-only detail states where Admin actions are not available.
 - Added the Admin Service Areas route at `/service-areas`, documenting the existing 500m/1km store-discovery radius inputs and current absence of ServiceArea records, geo-coordinates, boundaries, maps, or CRUD services.
 - Added the Admin Reports & Analytics route at `/reports` with real store/product composition, stored order status analytics, date filtering, billing/subscription totals, and a working CSV export for selected order records; unsupported historical and Admin-wide metrics remain explicitly unavailable.
+- Added Admin Security routes at `/security/admin-users`, `/security/roles`, and `/security/audit-logs` with explicit capability states based on the existing `UserRole`-only model; no fabricated users, permissions, audit events, credentials, or frontend-only security claims were introduced.
 
 - Inspected the workspace; no existing files or business/product documentation were present.
 - Created pnpm workspace and root TypeScript configuration.
