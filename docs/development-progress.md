@@ -11,6 +11,7 @@ Completed:
 - Added Admin Store Management routes at `/stores` and `/stores/[id]` with Store-backed search/filtering, merchant association, location/operations details, product/order metrics, and confirmed activate/deactivate actions through the existing store service.
 - Added Admin Product Management routes at `/products` and `/products/[id]` with Product-backed search/filtering, inventory/status views, Merchant/Store links, and confirmed activate/deactivate/remove actions through existing product services.
 - Added Admin Order Management routes at `/orders` and `/orders/[id]` with marketplace-wide order search/status filters, relationship links, item/payment/delivery details, and valid status advancement through the existing order service.
+- Added Admin Subscription Management routes at `/subscriptions` and `/subscriptions/[id]` with configured subscription/trial data, supported status filters, billing/history visibility, merchant/store links, and confirmed renewal through the existing subscription service.
 
 - Inspected the workspace; no existing files or business/product documentation were present.
 - Created pnpm workspace and root TypeScript configuration.
