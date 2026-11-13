@@ -554,3 +554,4 @@ Next.js development runtime stabilization:
 - Safe commands: `pnpm --filter @hyperlocal/main-web dev` for development; `pnpm --filter @hyperlocal/main-web build` followed by `pnpm --filter @hyperlocal/main-web start` (or `next start`) for production.
 - Verification passed while development was running during production build, after production startup, and after development restart. Merchant dashboard, store, products, inventory, and orders returned HTTP 200; the full merchant route set also returned HTTP 200 in production.
 - No dependency versions, authentication, authorization, routes, or generated build files were changed or committed.
+- Completed full frontend QA across `apps/main-web`, `apps/admin-web`, and shared packages. Verified route inventories, workspace typechecks, main-web production build, Admin production build, and preserved documented mock/backend limitations.
