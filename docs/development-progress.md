@@ -4,6 +4,8 @@
 
 Completed:
 
+- Established the Super Admin dashboard foundation in `apps/admin-web` with a responsive grouped shell, admin navigation, header, profile footer, and data-backed overview cards/sections. Documented the isolated Admin design system in `docs/localmarket-admin-design-system.md`; planned Admin management routes remain intentionally unimplemented.
+
 - Inspected the workspace; no existing files or business/product documentation were present.
 - Created pnpm workspace and root TypeScript configuration.
 - Initialized separate Next.js applications for main web and admin web.
